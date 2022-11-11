@@ -1,0 +1,83 @@
+
+  body{
+    margin: 0;
+    background: yellow;
+}
+
+
+.wrapper-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+div.title{
+    font-size: 55px;
+    max-width: 100vw;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+}
+
+
+div.clock{
+	margin-top: 2%;
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-self: center;
+    font-family: 'Bangers', cursive;
+	justify-content: space-between;
+}
+
+.label-count{
+	margin: 10px;
+    border: 5px solid black;
+    font-family: 'Bangers', cursive;
+    width: 200px;
+    text-align: justify;
+}
+
+.count{
+    text-align: center;
+    font-size: 100px;
+	font-family: Inconsolata, monospace;
+}
+
+.label{
+    text-align: center;
+    font-family: 'Bangers', cursive;
+}
+
+
+
+/* to make the clock responsive */
+@media screen and (max-width: 600px) {
+	div.clock{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	div.title {
+		font-size: 30px;
+	}
+
+	.label-count{
+		margin: 5px;
+		font-size: 25px;
+		width: 150px;
+	}
+
+	.count{
+		font-size: 62px;
+	}
+
+	.container {
+		position: relative;
+		bottom: 100px;
+	}
+}
+
+
+  
+  
