@@ -34,7 +34,7 @@ div.clock{
 .label-count{
 	margin: 10px;
     border: 5px solid black;
-    font-family: 'Bangers', cursive;
+	font-family: 'Inconsolata', monospace;
     width: 200px;
     text-align: justify;
 }
