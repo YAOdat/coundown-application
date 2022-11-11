@@ -22,8 +22,8 @@ function NavBar() {
             </a>
             <div className="navbar-links">
                 <ul> 
-                    <li><a href="#">Schedule</a></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="https://alqudscollege-my.sharepoint.com/:x:/g/personal/advtech_ltuc_com/EeXd_UKqD1RKmA7Yk56rYmQBZ01AaKzQbbwpXzlgMYgJ8g?e=h9gZWn" target='_blank'>Schedule</a></li>
+                    <li><a href="https://odat-countdown.netlify.app/">Home</a></li>
                     <li><a href="#">Custom</a></li>
     
                 </ul>
