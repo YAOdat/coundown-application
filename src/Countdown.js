@@ -1,5 +1,6 @@
 import './Countdown.css'
 import React from 'react';
+import Fire from './Fireworks';
 
 class Countdown extends React.Component {
     constructor(props) {
@@ -11,7 +12,8 @@ class Countdown extends React.Component {
             days: 0,
             hours: 0,
             minutes: 0,
-            seconds: 0
+            seconds: 0,
+            isOver: false
 
         }
     }
@@ -31,11 +33,17 @@ class Countdown extends React.Component {
             const hours = Math.floor((diffTime / (1000 * 60 * 60)) % 24);
 
             this.setState({ days: diffDays, hours:('0'+hours).slice(-2), minutes: ('0'+minutes).slice(-2), seconds: ('0'+seconds).slice(-2) });
+            if(this.state.isOver) {
+                clearInterval(this.interval);
+            }
 
         }, 1000);
 
         this.interval = setInterval(() => {
             this.setState({ currentDate: new Date() });
+            if (this.state.currentDate >= this.state.endDate) {
+                this.setState({ isOver: true });
+            }
         }, 1000);
     }
 
@@ -44,6 +52,7 @@ class Countdown extends React.Component {
 
         return (
             <div className="container">
+                {!this.state.isOver && 
                 <div className="wrapper-main">
                     <div id="title" className="title">JavaScript Bootcamp Graduation Countdown</div>
                     <div className="clock">
@@ -64,8 +73,31 @@ class Countdown extends React.Component {
                             <div id="second-label" className="label">Seconds</div>
                         </div>
                     </div>
-                </div>
+                </div> }
+                {this.state.isOver &&
+                <div className="wrapper-main">
+                <div id="title" className="title">Graduated!</div>
+                <div className="clock">
+                        <div id="day" className="label-count">
+                            <div id="day-count" className="count">00</div>
+                            <div id="day-label" className="label">Days</div>
+                        </div>
+                        <div className="label-count">
+                            <div id="hour-count" className="count">00</div>
+                            <div id="hour-label" className="label">Hours</div>
+                        </div>
+                        <div className="label-count">
+                            <div id="minute-count" className="count">00</div>
+                            <div id="minute-label" className="label">Minutes</div>
+                        </div>
+                        <div className="label-count">
+                            <div id="second-count" className="count">00</div>
+                            <div id="second-label" className="label">Seconds</div>
+                        </div>
+                    </div>
+                    </div> }
 
+              <Fire/>
 
 
             </div>
